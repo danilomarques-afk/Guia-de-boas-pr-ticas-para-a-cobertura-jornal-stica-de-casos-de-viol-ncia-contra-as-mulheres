@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download Direto - Guia de Boas Práticas | ACAERT</title>
+    
+    <!-- Tipografia Oficial -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* =========================================
+           PALETA DE CORES (IDENTIDADE VISUAL)
+           ========================================= */
+        :root {
+            --roxo-profundo: #5B234B;
+            --roxo-medio: #8E3E73;
+            --rosa-escuro: #C96C8C;
+            --rosa-medio: #E8A686;
+            --rosa-claro: #F3D6DF;
+            --claro: #F7F4F6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            /* Fundo base escuro para destacar o vidro e as luzes */
+            background-color: var(--roxo-profundo);
+            color: var(--claro);
+            font-family: 'Merriweather', serif;
+            overflow-x: hidden;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        h1, h2, h3, .font-montserrat {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.1rem;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           GRADIENTES ORGÂNICOS ANIMADOS (BLOBS)
+           ========================================= */
+        .organic-background {
+            position: fixed;
+            top: 0; left: 0; width: 100vw; height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+            background: var(--roxo-profundo);
+        }
+
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(120px); /* Desfoque intenso para mesclar as cores */
+            opacity: 0.8;
+            animation: moveBlobs 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* Definindo as luzes orgânicas com as cores da paleta */
+        .blob-1 {
+            width: 60vw; height: 60vw;
+            background: var(--roxo-medio);
+            top: -20%; left: -10%;
+            animation-duration: 25s;
+        }
+
+        .blob-2 {
+            width: 50vw; height: 50vw;
+            background: var(--rosa-escuro);
+            bottom: -10%; right: -10%;
+            animation-duration: 22s;
+            animation-direction: alternate-reverse;
+        }
+
+        .blob-3 {
+            width: 45vw; height: 45vw;
+            background: var(--rosa-medio);
+            top: 30%; left: 40%;
+            animation-duration: 28s;
+        }
+
+        .blob-4 {
+            width: 30vw; height: 30vw;
+            background: var(--rosa-claro);
+            top: 10%; right: 10%;
+            opacity: 0.5;
+            animation-duration: 18s;
+        }
+
+        @keyframes moveBlobs {
+            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
+            50% { transform: translate(10vw, 10vh) scale(1.1) rotate(180deg); }
+            100% { transform: translate(-10vw, 15vh) scale(0.9) rotate(360deg); }
+        }
+
+        /* =========================================
+           ESTRUTURA GERAL E GLASSMORPHISM PREMIUM
+           ========================================= */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Classe principal do Vidro Fosco */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05); /* Bem transparente */
+            backdrop-filter: blur(30px); /* Blur super forte */
+            -webkit-backdrop-filter: blur(30px);
+            border: 1px solid rgba(255, 255, 255, 0.15); /* Borda de luz */
+            border-top: 1px solid rgba(255, 255, 255, 0.3); /* Reflexo no topo */
+            border-left: 1px solid rgba(255, 255, 255, 0.3); /* Reflexo na esquerda */
+            border-radius: 32px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            padding: 4rem;
+        }
+
+        /* =========================================
+           HERO SECTION
+           ========================================= */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 5rem;
+            margin-bottom: 4rem;
+            animation: fadeIn 1s ease-out forwards;
+        }
+
+        .hero-text {
+            flex: 1.2;
+        }
+
+        .tag-institucional {
+            display: inline-block;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 800;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--rosa-claro);
+            margin-bottom: 2rem;
+            padding: 0.5rem 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 50px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            line-height: 1.1;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(to right, var(--claro), var(--rosa-claro));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--claro);
+            opacity: 0.9;
+            margin-bottom: 3rem;
+            font-size: 1.2rem;
+            max-width: 90%;
+        }
+
+        /* BOTÃO DE DOWNLOAD DIRETO (GLOW EFFECT) */
+        .btn-download {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--roxo-profundo);
+            background: linear-gradient(135deg, var(--rosa-claro) 0%, var(--rosa-medio) 100%);
+            padding: 1.2rem 3rem;
+            border-radius: 50px;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: none;
+            box-shadow: 0 10px 30px rgba(232, 166, 134, 0.4), inset 0 2px 0 rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+        }
+
+        .btn-download:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(232, 166, 134, 0.6), inset 0 2px 0 rgba(255, 255, 255, 0.8);
+            background: linear-gradient(135deg, var(--claro) 0%, var(--rosa-claro) 100%);
+        }
+
+        .hero-mockup {
+            flex: 0.8;
+            display: flex;
+            justify-content: center;
+            position: relative;
+        }
+
+        .mockup-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 16px;
+            box-shadow: -20px 30px 60px rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: perspective(1000px) rotateY(-15deg);
+            transition: transform 0.5s ease;
+        }
+
+        .hero-mockup:hover .mockup-img {
+            transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+        }
+
+        /* =========================================
+           CARDS DE BENEFÍCIOS (TBM EM VIDRO)
+           ========================================= */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 25px 45px rgba(0, 0, 0, 0.3);
+        }
+
+        .glass-card h3 {
+            color: var(--rosa-claro);
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .glass-card p {
+            font-size: 1rem;
+            opacity: 0.85;
+            line-height: 1.6;
+        }
+
+        /* =========================================
+           ANIMAÇÕES CSS
+           ========================================= */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-up {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .animate-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+
+        /* =========================================
+           RESPONSIVIDADE
+           ========================================= */
+        @media (max-width: 1024px) {
+            .hero h1 { font-size: 3rem; }
+            .hero { gap: 3rem; }
+        }
+
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                gap: 3rem;
+            }
+            .hero h1 { font-size: 2.5rem; }
+            .hero p { margin: 0 auto 2.5rem auto; }
+            .glass-panel { padding: 2.5rem 1.5rem; }
+            .hero-mockup .mockup-img { transform: none; }
+            .hero-mockup:hover .mockup-img { transform: translateY(-5px); }
+            .tag-institucional { font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo Orgânico com as cores da paleta -->
+    <div class="organic-background">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+        <div class="blob blob-4"></div>
+    </div>
+
+    <div class="container">
+        
+        <!-- PAINEL PRINCIPAL EM GLASSMORPHISM -->
+        <main class="glass-panel">
+            
+            <section class="hero">
+                <div class="hero-text">
+                    <span class="tag-institucional">ACAERT & Pandion Editora</span>
+                    <h1>Guia de Boas Práticas</h1>
+                    <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado. Um manual completo e indispensável para a cobertura jornalística em Rádio, TV e Mídias Digitais.</p>
+                    
+                    <!-- BOTÃO DIRETO -->
+                    <a href="GUIA DE BOAS PRÁTICAS_DRA MELISSA AMARAL_2.pdf" class="btn-download" download>
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                            <polyline points="7 10 12 15 17 10"></polyline>
+                            <line x1="12" y1="15" x2="12" y2="3"></line>
+                        </svg>
+                        Baixar Guia em PDF
+                    </a>
+                </div>
+
+                <div class="hero-mockup">
+                    <img src="Livro guia.png" alt="Mockup do Guia de Boas Práticas" class="mockup-img">
+                </div>
+            </section>
+
+            <!-- SEÇÃO DE DESTAQUES (CARDS EM VIDRO) -->
+            <div style="text-align: center; margin: 4rem 0 2rem 0;" class="animate-up">
+                <h2 class="font-montserrat" style="font-size: 2rem; color: var(--claro); font-weight: 800;">Por que este guia é indispensável?</h2>
+            </div>
+
+            <section class="features-grid">
+                <div class="glass-card animate-up delay-1">
+                    <h3 class="font-montserrat">
+                        <span>🤍</span> Ética e Cuidado
+                    </h3>
+                    <p>Diretrizes claras para colocar a responsabilidade e os direitos humanos no centro da comunicação, protegendo a dignidade das vítimas.</p>
+                </div>
+                
+                <div class="glass-card animate-up delay-2">
+                    <h3 class="font-montserrat">
+                        <span>👥</span> Informação que Transforma
+                    </h3>
+                    <p>Uma linguagem visual e textual que orienta a sociedade e as redações sem recorrer ao sensacionalismo ou à espetacularização.</p>
+                </div>
+                
+                <div class="glass-card animate-up delay-3">
+                    <h3 class="font-montserrat">
+                        <span>⚖️</span> Amparo Legal
+                    </h3>
+                    <p>Checklists práticos de apuração, redação e enquadramento à luz da Lei Maria da Penha e das mais recentes jurisprudências.</p>
+                </div>
+            </section>
+
+        </main>
+        
+        <!-- RODAPÉ DISCRETO -->
+        <footer style="text-align: center; margin-top: 3rem; opacity: 0.6;" class="animate-up delay-3">
+            <p style="font-size: 0.9rem;">&copy; 2026 ACAERT. Todos os direitos reservados.</p>
+        </footer>
+
+    </div>
+
+    <!-- SCRIPT SIMPLES PARA ANIMAÇÃO DE ENTRADA AO ROLAR -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll('.animate-up');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            elements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
