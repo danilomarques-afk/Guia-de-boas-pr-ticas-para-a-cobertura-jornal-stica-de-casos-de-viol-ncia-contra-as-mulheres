@@ -3,10 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Direto - Guia de Boas Práticas | ACAERT</title>
+    <title>Guia de Boas Práticas | ACAERT</title>
     
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 
     <style>
@@ -19,17 +17,14 @@
             --claro: #F7F4F6;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
             background-color: var(--roxo-profundo);
             color: var(--claro);
             font-family: 'Merriweather', serif;
-            overflow-x: hidden;
             min-height: 100vh;
         }
-
-        h1, h2, h3, .font-montserrat { font-family: 'Montserrat', sans-serif; }
 
         /* Fundo Animado */
         .organic-background {
@@ -37,57 +32,47 @@
             z-index: -1; background: var(--roxo-profundo);
         }
 
-        .blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.8; animation: moveBlobs 20s infinite alternate cubic-bezier(0.4, 0, 0.2, 1); }
-        .blob-1 { width: 60vw; height: 60vw; background: var(--roxo-medio); top: -20%; left: -10%; animation-duration: 25s; }
-        .blob-2 { width: 50vw; height: 50vw; background: var(--rosa-escuro); bottom: -10%; right: -10%; animation-duration: 22s; animation-direction: alternate-reverse; }
-        .blob-3 { width: 45vw; height: 45vw; background: var(--rosa-medio); top: 30%; left: 40%; animation-duration: 28s; }
-        .blob-4 { width: 30vw; height: 30vw; background: var(--rosa-claro); top: 10%; right: 10%; opacity: 0.5; animation-duration: 18s; }
-
+        .blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.8; animation: moveBlobs 20s infinite alternate; }
+        .blob-1 { width: 60vw; height: 60vw; background: var(--roxo-medio); top: -20%; left: -10%; }
+        .blob-2 { width: 50vw; height: 50vw; background: var(--rosa-escuro); bottom: -10%; right: -10%; }
+        
         @keyframes moveBlobs {
-            0% { transform: translate(0, 0) scale(1) rotate(0deg); }
-            50% { transform: translate(10vw, 10vh) scale(1.1) rotate(180deg); }
-            100% { transform: translate(-10vw, 15vh) scale(0.9) rotate(360deg); }
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(5vw, 5vh); }
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; position: relative; z-index: 1; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
 
-        /* Hero Section Sem Caixas */
-        .hero { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 4rem; animation: fadeIn 1s ease-out forwards; }
+        /* Hero Sem Fundo */
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 6rem; }
         .hero-text { flex: 1.2; }
-
-        .tag-institucional {
-            display: inline-block; font-family: 'Montserrat', sans-serif; font-size: 0.8rem; font-weight: 800;
-            letter-spacing: 3px; text-transform: uppercase; color: var(--rosa-claro); margin-bottom: 2rem;
-        }
-
-        .hero h1 { font-size: 4rem; font-weight: 900; margin-bottom: 1.5rem; color: var(--claro); }
-
-        .hero p { color: var(--claro); opacity: 0.9; margin-bottom: 3rem; font-size: 1.2rem; max-width: 90%; }
+        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 4rem; margin-bottom: 1.5rem; color: var(--claro); }
+        .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; }
 
         .btn-download {
-            display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+            display: inline-flex; align-items: center; gap: 12px;
             font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem;
             color: var(--roxo-profundo); background: var(--rosa-medio);
             padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none;
             text-transform: uppercase; transition: 0.3s;
         }
-
         .btn-download:hover { transform: translateY(-5px); background: var(--claro); }
 
-        .hero-mockup { flex: 0.8; display: flex; justify-content: center; }
-        .mockup-img { max-width: 100%; height: auto; transition: transform 0.5s ease; }
-        .hero-mockup:hover .mockup-img { transform: translateY(-10px); }
+        .mockup-img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
 
-        /* Grid de Benefícios Sem Caixas */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .card { padding: 1rem; }
-        .card h3 { color: var(--rosa-claro); font-size: 1.5rem; margin-bottom: 1rem; display: flex; align-items: center; gap: 12px; }
-        .card p { font-size: 1rem; opacity: 0.85; line-height: 1.6; }
-
-        @media (max-width: 768px) {
-            .hero { flex-direction: column; text-align: center; }
-            .hero h1 { font-size: 2.5rem; }
+        /* Cards com Efeito de Vidro */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
         }
+        .glass-card h3 { font-family: 'Montserrat'; color: var(--rosa-claro); margin-bottom: 1rem; }
+        
+        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } }
     </style>
 </head>
 <body>
@@ -95,47 +80,35 @@
     <div class="organic-background">
         <div class="blob blob-1"></div>
         <div class="blob blob-2"></div>
-        <div class="blob blob-3"></div>
-        <div class="blob blob-4"></div>
     </div>
 
     <div class="container">
-        <main>
-            <section class="hero">
-                <div class="hero-text">
-                    <span class="tag-institucional">ACAERT & Pandion Editora</span>
-                    <h1>Guia de Boas Práticas</h1>
-                    <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado.</p>
-                    
-                    <a href="GUIA DE BOAS PRÁTICAS_DRA MELISSA AMARAL_2.pdf" class="btn-download" download>
-                        Baixar Guia em PDF
-                    </a>
-                </div>
+        <section class="hero">
+            <div class="hero-text">
+                <h1>Guia de Boas Práticas</h1>
+                <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado.</p>
+                <!-- Renomeie seu arquivo para guia.pdf e coloque na mesma pasta -->
+                <a href="guia.pdf" class="btn-download" download>Baixar Guia em PDF</a>
+            </div>
+            <div class="hero-mockup">
+                <img src="Livro guia.png" alt="Capa do Guia" class="mockup-img">
+            </div>
+        </section>
 
-                <div class="hero-mockup">
-                    <img src="Livro guia.png" alt="Capa do Guia" class="mockup-img">
-                </div>
-            </section>
-
-            <section class="features-grid">
-                <div class="card">
-                    <h3><span>🤍</span> Ética e Cuidado</h3>
-                    <p>Diretrizes claras para colocar a responsabilidade e os direitos humanos no centro da comunicação.</p>
-                </div>
-                <div class="card">
-                    <h3><span>👥</span> Informação que Transforma</h3>
-                    <p>Uma linguagem que orienta a sociedade e as redações sem recorrer ao sensacionalismo.</p>
-                </div>
-                <div class="card">
-                    <h3><span>⚖️</span> Amparo Legal</h3>
-                    <p>Checklists práticos de apuração e enquadramento à luz da Lei Maria da Penha.</p>
-                </div>
-            </section>
-        </main>
-        
-        <footer style="text-align: center; margin-top: 5rem; opacity: 0.6;">
-            <p>&copy; 2026 ACAERT. Todos os direitos reservados.</p>
-        </footer>
+        <section class="features-grid">
+            <div class="glass-card">
+                <h3><span>🤍</span> Ética e Cuidado</h3>
+                <p>Diretrizes claras para colocar a responsabilidade e os direitos humanos no centro da comunicação.</p>
+            </div>
+            <div class="glass-card">
+                <h3><span>👥</span> Informação que Transforma</h3>
+                <p>Uma linguagem visual e textual que orienta a sociedade sem recorrer ao sensacionalismo.</p>
+            </div>
+            <div class="glass-card">
+                <h3><span>⚖️</span> Amparo Legal</h3>
+                <p>Checklists práticos de apuração e enquadramento à luz da Lei Maria da Penha.</p>
+            </div>
+        </section>
     </div>
 </body>
 </html>
