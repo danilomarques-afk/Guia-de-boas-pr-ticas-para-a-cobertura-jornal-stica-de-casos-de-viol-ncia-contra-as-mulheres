@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Download Direto - Guia de Boas Práticas | ACAERT</title>
+    <title>Guia de Boas Práticas | ACAERT</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 
@@ -24,6 +24,7 @@
             color: var(--claro);
             font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
+            padding-bottom: 2rem;
         }
 
         /* Fundo Animado */
@@ -41,45 +42,55 @@
             100% { transform: translate(5vw, 5vh); }
         }
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
 
         /* Hero */
-        .hero { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 6rem; }
-        .hero-text { flex: 1.2; }
-        .hero h1 { font-size: 4rem; margin-bottom: 1.5rem; color: var(--claro); }
-        .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; }
+        .hero { display: flex; align-items: center; justify-content: space-between; gap: 3rem; margin-top: 3rem; margin-bottom: 4rem; }
+        .hero-text { flex: 1; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--claro); line-height: 1.1; }
+        .hero p { font-size: 1.1rem; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.6; }
 
         .btn-download {
-            display: inline-flex; align-items: center; gap: 12px;
-            font-weight: 800; font-size: 1.1rem;
+            display: inline-flex; align-items: center; gap: 10px;
+            font-weight: 800; font-size: 1rem;
             color: var(--roxo-profundo); background: var(--rosa-medio);
-            padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none;
+            padding: 1rem 2rem; border-radius: 50px; text-decoration: none;
             text-transform: uppercase; transition: 0.3s;
         }
-        .btn-download:hover { transform: translateY(-5px); background: var(--claro); }
+        .btn-download:hover { transform: translateY(-3px); background: var(--claro); }
 
-        /* AJUSTE DO MOCKUP: Limite de tamanho e sem bordas */
+        /* MOCKUP COM ANIMAÇÃO */
+        .hero-mockup { flex: 0.5; display: flex; justify-content: center; }
         .mockup-img { 
-            width: 350px; 
+            width: 280px; 
             height: auto; 
-            border: none !important; 
-            box-shadow: none !important; 
-            background: transparent !important;
-            transform: perspective(1000px) rotateY(-15deg);
+            cursor: pointer;
+            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            transform: perspective(1000px) rotateY(-10deg);
+        }
+        .mockup-img:hover {
+            transform: perspective(1000px) rotateY(0deg) scale(1.05);
         }
 
-        /* Cards com efeito de vidro mantidos */
-        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        /* Cards com efeito de vidro */
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 24px;
-            padding: 2.5rem;
+            border-radius: 20px;
+            padding: 2rem;
         }
-        .glass-card h3 { color: var(--rosa-claro); margin-bottom: 1rem; }
-        
-        @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } }
+        .glass-card h3 { color: var(--rosa-claro); margin-bottom: 0.8rem; font-size: 1.2rem; }
+        .glass-card p { font-size: 0.95rem; opacity: 0.85; line-height: 1.5; }
+
+        /* Responsividade Smartphone */
+        @media (max-width: 768px) {
+            .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; }
+            .hero h1 { font-size: 2.5rem; }
+            .mockup-img { width: 220px; }
+            .container { padding: 1.5rem; }
+        }
     </style>
 </head>
 <body>
@@ -94,7 +105,6 @@
             <div class="hero-text">
                 <h1>Guia de Boas Práticas</h1>
                 <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado.</p>
-                <!-- Verifique se o arquivo guia.pdf está na mesma pasta -->
                 <a href="guia.pdf" class="btn-download" download>Baixar Guia em PDF</a>
             </div>
             <div class="hero-mockup">
@@ -105,15 +115,15 @@
         <section class="features-grid">
             <div class="glass-card">
                 <h3><span>🤍</span> Ética e Cuidado</h3>
-                <p>Diretrizes claras para colocar a responsabilidade e os direitos humanos no centro da comunicação.</p>
+                <p>Diretrizes para colocar a responsabilidade e direitos humanos no centro da comunicação.</p>
             </div>
             <div class="glass-card">
                 <h3><span>👥</span> Informação que Transforma</h3>
-                <p>Uma linguagem visual e textual que orienta a sociedade sem recorrer ao sensacionalismo.</p>
+                <p>Linguagem que orienta a sociedade sem recorrer ao sensacionalismo.</p>
             </div>
             <div class="glass-card">
                 <h3><span>⚖️</span> Amparo Legal</h3>
-                <p>Checklists práticos de apuração e enquadramento à luz da Lei Maria da Penha.</p>
+                <p>Checklists práticos de apuração à luz da Lei Maria da Penha.</p>
             </div>
         </section>
     </div>
