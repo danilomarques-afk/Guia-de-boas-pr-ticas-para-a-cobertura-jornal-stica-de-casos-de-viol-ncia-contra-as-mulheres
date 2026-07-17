@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guia de Boas Práticas | ACAERT</title>
+    <title>Download Direto - Guia de Boas Práticas | ACAERT</title>
     
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 
     <style>
         :root {
@@ -22,7 +22,7 @@
         body {
             background-color: var(--roxo-profundo);
             color: var(--claro);
-            font-family: 'Merriweather', serif;
+            font-family: 'Montserrat', sans-serif;
             min-height: 100vh;
         }
 
@@ -43,34 +43,41 @@
 
         .container { max-width: 1200px; margin: 0 auto; padding: 4rem 2rem; }
 
-        /* Hero Sem Fundo */
+        /* Hero */
         .hero { display: flex; align-items: center; justify-content: space-between; gap: 5rem; margin-bottom: 6rem; }
         .hero-text { flex: 1.2; }
-        .hero h1 { font-family: 'Montserrat', sans-serif; font-size: 4rem; margin-bottom: 1.5rem; color: var(--claro); }
+        .hero h1 { font-size: 4rem; margin-bottom: 1.5rem; color: var(--claro); }
         .hero p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; }
 
         .btn-download {
             display: inline-flex; align-items: center; gap: 12px;
-            font-family: 'Montserrat', sans-serif; font-weight: 800; font-size: 1.1rem;
+            font-weight: 800; font-size: 1.1rem;
             color: var(--roxo-profundo); background: var(--rosa-medio);
             padding: 1.2rem 3rem; border-radius: 50px; text-decoration: none;
             text-transform: uppercase; transition: 0.3s;
         }
         .btn-download:hover { transform: translateY(-5px); background: var(--claro); }
 
-        .mockup-img { max-width: 100%; height: auto; border-radius: 16px; box-shadow: 0 20px 40px rgba(0,0,0,0.4); }
+        /* AJUSTE DO MOCKUP: Limite de tamanho e sem bordas */
+        .mockup-img { 
+            width: 350px; 
+            height: auto; 
+            border: none !important; 
+            box-shadow: none !important; 
+            background: transparent !important;
+            transform: perspective(1000px) rotateY(-15deg);
+        }
 
-        /* Cards com Efeito de Vidro */
+        /* Cards com efeito de vidro mantidos */
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         .glass-card {
             background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 24px;
             padding: 2.5rem;
         }
-        .glass-card h3 { font-family: 'Montserrat'; color: var(--rosa-claro); margin-bottom: 1rem; }
+        .glass-card h3 { color: var(--rosa-claro); margin-bottom: 1rem; }
         
         @media (max-width: 768px) { .hero { flex-direction: column; text-align: center; } }
     </style>
@@ -87,7 +94,7 @@
             <div class="hero-text">
                 <h1>Guia de Boas Práticas</h1>
                 <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado.</p>
-                <!-- Renomeie seu arquivo para guia.pdf e coloque na mesma pasta -->
+                <!-- Verifique se o arquivo guia.pdf está na mesma pasta -->
                 <a href="guia.pdf" class="btn-download" download>Baixar Guia em PDF</a>
             </div>
             <div class="hero-mockup">
