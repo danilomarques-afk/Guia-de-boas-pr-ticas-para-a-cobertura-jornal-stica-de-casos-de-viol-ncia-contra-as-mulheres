@@ -1,34 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMNE1P8Q7"></script>
-
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-
-gtag('js', new Date());
-
-gtag('config', 'G-1WMNE1P8Q7', {
-    anonymize_ip: true
-});
-</script>
-
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-(function(c,l,a,r,i,t,y){
-    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-    t=l.createElement(r);
-    t.async=1;
-    t.src="https://www.clarity.ms/tag/"+i;
-    y=l.getElementsByTagName(r)[0];
-    y.parentNode.insertBefore(t,y);
-})(window, document, "clarity", "script", "xpelcxj5n2");
-</script>
-    <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia de Boas Práticas | ACAERT</title>
+
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-1WMNE1P8Q7"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-1WMNE1P8Q7', { anonymize_ip: true });
+    </script>
+
+    <!-- Microsoft Clarity -->
+    <script type="text/javascript">
+        (function(c,l,a,r,i,t,y){
+            c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+            t=l.createElement(r);
+            t.async=1;
+            t.src="https://www.clarity.ms/tag/"+i;
+            y=l.getElementsByTagName(r)[0];
+            y.parentNode.insertBefore(t,y);
+        })(window, document, "clarity", "script", "xpelcxj5n2");
+    </script>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800;900&display=swap" rel="stylesheet">
 
@@ -41,81 +37,28 @@ gtag('config', 'G-1WMNE1P8Q7', {
             --rosa-claro: #F3D6DF;
             --claro: #F7F4F6;
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-
-        body {
-            background-color: var(--roxo-profundo);
-            color: var(--claro);
-            font-family: 'Montserrat', sans-serif;
-            min-height: 100vh;
-            padding-bottom: 2rem;
-        }
-
-        /* Fundo Animado */
-        .organic-background {
-            position: fixed; top: 0; left: 0; width: 100vw; height: 100vh;
-            z-index: -1; background: var(--roxo-profundo);
-        }
-
+        body { background-color: var(--roxo-profundo); color: var(--claro); font-family: 'Montserrat', sans-serif; min-height: 100vh; padding-bottom: 2rem; }
+        .organic-background { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; background: var(--roxo-profundo); }
         .blob { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.8; animation: moveBlobs 20s infinite alternate; }
         .blob-1 { width: 60vw; height: 60vw; background: var(--roxo-medio); top: -20%; left: -10%; }
         .blob-2 { width: 50vw; height: 50vw; background: var(--rosa-escuro); bottom: -10%; right: -10%; }
-        
-        @keyframes moveBlobs {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(5vw, 5vh); }
-        }
-
+        @keyframes moveBlobs { 0% { transform: translate(0, 0); } 100% { transform: translate(5vw, 5vh); } }
         .container { max-width: 1000px; margin: 0 auto; padding: 2rem; }
-
-        /* Hero */
         .hero { display: flex; align-items: center; justify-content: space-between; gap: 3rem; margin-top: 3rem; margin-bottom: 4rem; }
         .hero-text { flex: 1; }
         .hero h1 { font-size: 3.5rem; margin-bottom: 1.5rem; color: var(--claro); line-height: 1.1; }
         .hero p { font-size: 1.1rem; margin-bottom: 2.5rem; opacity: 0.9; line-height: 1.6; }
-
-        .btn-download {
-            display: inline-flex; align-items: center; gap: 10px;
-            font-weight: 800; font-size: 1rem;
-            color: var(--roxo-profundo); background: var(--rosa-medio);
-            padding: 1rem 2rem; border-radius: 50px; text-decoration: none;
-            text-transform: uppercase; transition: 0.3s;
-        }
+        .btn-download { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1rem; color: var(--roxo-profundo); background: var(--rosa-medio); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; text-transform: uppercase; transition: 0.3s; cursor: pointer; }
         .btn-download:hover { transform: translateY(-3px); background: var(--claro); }
-
-        /* MOCKUP COM ANIMAÇÃO */
         .hero-mockup { flex: 0.5; display: flex; justify-content: center; }
-        .mockup-img { 
-            width: 280px; 
-            height: auto; 
-            cursor: pointer;
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform: perspective(1000px) rotateY(-10deg);
-        }
-        .mockup-img:hover {
-            transform: perspective(1000px) rotateY(0deg) scale(1.05);
-        }
-
-        /* Cards com efeito de vidro */
+        .mockup-img { width: 280px; height: auto; cursor: pointer; transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); transform: perspective(1000px) rotateY(-10deg); }
+        .mockup-img:hover { transform: perspective(1000px) rotateY(0deg) scale(1.05); }
         .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; }
-        .glass-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            padding: 2rem;
-        }
+        .glass-card { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); border-radius: 20px; padding: 2rem; }
         .glass-card h3 { color: var(--rosa-claro); margin-bottom: 0.8rem; font-size: 1.2rem; }
         .glass-card p { font-size: 0.95rem; opacity: 0.85; line-height: 1.5; }
-
-        /* Responsividade Smartphone */
-        @media (max-width: 768px) {
-            .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; }
-            .hero h1 { font-size: 2.5rem; }
-            .mockup-img { width: 220px; }
-            .container { padding: 1.5rem; }
-        }
+        @media (max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; gap: 2rem; } .hero h1 { font-size: 2.5rem; } .mockup-img { width: 220px; } .container { padding: 1.5rem; } }
     </style>
 </head>
 <body>
@@ -130,18 +73,12 @@ gtag('config', 'G-1WMNE1P8Q7', {
             <div class="hero-text">
                 <h1>Guia de Boas Práticas</h1>
                 <p>Como informar sobre casos de violência contra as mulheres com ética, responsabilidade e cuidado.</p>
-                <a <a
-    href="Guia de Boas Práticas.pdf"
-    class="btn-download"
-    download
-    id="downloadBtn">Baixar Guia em PDF</a>
+                <!-- Ajustado: nome do arquivo simplificado para guia.pdf -->
+                <a href="guia.pdf" class="btn-download" download id="downloadBtn">Baixar Guia em PDF</a>
             </div>
             <div class="hero-mockup">
-                <img <img
-    src="Livro guia.png"
-    alt="Capa do Guia"
-    class="mockup-img"
-    id="mockupLivro">
+                <!-- Ajustado: removida a duplicidade -->
+                <img src="Livro guia.png" alt="Capa do Guia" class="mockup-img" id="mockupLivro">
             </div>
         </section>
 
@@ -160,57 +97,39 @@ gtag('config', 'G-1WMNE1P8Q7', {
             </div>
         </section>
     </div>
+
     <script>
+        const arquivoPDF = "guia.pdf";
 
-const arquivoPDF = "Guia de Boas Práticas.pdf";
+        function registrarDownload(origem){
+            if(typeof gtag === "function"){
+                gtag("event", "download_guia_pdf", {
+                    event_category: "Guia",
+                    event_label: origem,
+                    file_name: arquivoPDF
+                });
+            }
+        }
 
-function registrarDownload(origem){
-
-    if(typeof gtag === "function"){
-        gtag("event","download_guia_pdf",{
-            event_category:"Guia",
-            event_label:origem,
-            file_name:arquivoPDF
+        window.addEventListener("load", function(){
+            if(typeof gtag === "function"){
+                gtag("event", "landing_view", { page_title: document.title });
+            }
         });
-    }
 
-}
-
-window.addEventListener("load",function(){
-
-    if(typeof gtag === "function"){
-        gtag("event","landing_view",{
-            page_title:document.title
+        document.getElementById("downloadBtn").addEventListener("click", function(){
+            registrarDownload("Botão");
         });
-    }
 
-});
-
-document.getElementById("downloadBtn")
-.addEventListener("click",function(){
-
-    registrarDownload("Botão");
-
-});
-
-document.getElementById("mockupLivro")
-.addEventListener("click",function(){
-
-    registrarDownload("Imagem");
-
-    const link=document.createElement("a");
-
-    link.href=arquivoPDF;
-    link.download="";
-
-    document.body.appendChild(link);
-
-    link.click();
-
-    document.body.removeChild(link);
-
-});
-
-</script>
+        document.getElementById("mockupLivro").addEventListener("click", function(){
+            registrarDownload("Imagem");
+            const link = document.createElement("a");
+            link.href = arquivoPDF;
+            link.download = "Guia_de_Boas_Praticas.pdf"; // Nome do arquivo que o usuário salvará
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
 </body>
 </html>
